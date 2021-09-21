@@ -1,11 +1,11 @@
 import { inject } from "tsyringe";
 
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
-import { IRentalsRepository } from "../repositories/IRentalsRepository";
+import { IRentalsRepository } from "../../repositories/IRentalsRepository";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 
 import { AppError } from "@shared/errors/AppError";
-import { Rental } from "../infra/typeorm/entities/Rental";
+import { Rental } from "../../infra/typeorm/entities/Rental";
 
 interface IRequest{
     id:string;
@@ -13,7 +13,7 @@ interface IRequest{
 }
 
 
-class DevolitionRentalUseCase{
+class DevolutionRentalUseCase{
 
     constructor(
         @inject("rentalsRepository")
@@ -72,4 +72,4 @@ class DevolitionRentalUseCase{
     }
 }
 
-export {DevolitionRentalUseCase}
+export {DevolutionRentalUseCase}

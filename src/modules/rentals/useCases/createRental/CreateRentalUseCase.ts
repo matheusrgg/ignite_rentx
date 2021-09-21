@@ -5,7 +5,7 @@ import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { AppError } from "@shared/errors/AppError";
-import { IRentalsRepository } from "../repositories/IRentalsRepository";
+import { IRentalsRepository } from "../../repositories/IRentalsRepository";
 
 interface IRequest {
   user_id: string;

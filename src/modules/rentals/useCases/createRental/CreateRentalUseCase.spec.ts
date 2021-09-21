@@ -6,7 +6,7 @@ import { DayjsDateProvider } from "@shared/container/providers/DateProvider/impl
 import { AppError } from "@shared/errors/AppError";
 
 
-import { RentalsRepositoryInMemory } from "../repositories/in-memory/RentalsRepositoryInMemory";
+import { RentalsRepositoryInMemory } from "../../repositories/in-memory/RentalsRepositoryInMemory";
 import { CreateRentalUseCase } from "./CreateRentalUseCase";
 
 let createRentalUseCase: CreateRentalUseCase;
