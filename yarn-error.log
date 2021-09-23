@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Matheus\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Users\Matheus\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add handlebars
 
 PATH: 
   C:\Users\Matheus\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Matheus\bin;C:\Python39\Scripts;C:\Python39;C:\Program Files\Microsoft MPI\Bin;C:\Python38\Scripts;C:\Python38;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn;C:\Program Files\Microsoft SQL Server\140\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn;C:\Program Files\Microsoft SQL Server\140\DTS\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn;C:\Program Files\Azure Data Studio\bin;C:\Program Files\nodejs;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Matheus\AppData\Local\Microsoft\WindowsApps;C:\Users\Matheus\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Matheus\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\Matheus\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\Matheus\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Matheus\Documents\Code\doismilevinteum\jsprojects\ignite-node-rocketseat\cap3\primeiroTypescriptBD\node_modules\.bin\ts-node-dev'
+  Error: EPERM: operation not permitted, unlink 'C:\xampp\htdocs\Estudo\RocketSeat\projeto_rentx\node_modules\.bin\ts-node-dev'
 
 npm manifest: 
   {
@@ -25,6 +25,7 @@ npm manifest:
     "dependencies": {
       "bcrypt": "^5.0.1",
       "bcryptjs": "^2.4.3",
+      "cross-env": "^7.0.3",
       "dayjs": "^1.10.6",
       "express": "^4.17.1",
       "express-async-errors": "^3.1.1",
@@ -33,15 +34,16 @@ npm manifest:
       "npm": "^7.21.0",
       "pg": "^8.6.0",
       "reflect-metadata": "^0.1.13",
+      "supertest": "^6.1.6",
       "tsyringe": "^4.6.0",
       "typeorm": "^0.2.34",
-      "supertest": "^6.1.6",
       "uuid": "^8.3.2"
     },
     "scripts": {
       "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
       "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-      "test": "set NODE_ENV=test&& yarn jest",
+  
+      "test": "cross-env NODE_ENV=test jest",
       "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
     },
     "devDependencies": {
@@ -53,7 +55,6 @@ npm manifest:
       "@types/supertest": "^2.0.11",
       "@types/uuid": "^8.3.1",
       "jest": "^27.0.6",
-  
       "ts-jest": "^27.0.4",
       "ts-node-dev": "^1.1.8",
       "tsconfig-paths": "^3.10.1",
@@ -1702,7 +1703,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
     integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
   
-  cross-spawn@^7.0.3:
+  cross-env@^7.0.3:
+    version "7.0.3"
+    resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+    integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+    dependencies:
+      cross-spawn "^7.0.1"
+  
+  cross-spawn@^7.0.1, cross-spawn@^7.0.3:
     version "7.0.3"
     resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
     integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
